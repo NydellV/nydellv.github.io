@@ -1,229 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nydell Vera - ePortfolio</title>
+
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: #f5f5f7;
+      margin: 0;
       color: #1d1d1f;
-      line-height: 1.6;
-    }
-
-    .hero {
-      min-height: 80vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px 20px;
-      background: linear-gradient(to bottom, #ffffff, #f5f5f7);
-    }
-
-    .hero-content {
-      max-width: 900px;
-    }
-
-    .hero h1 {
-      font-size: clamp(3rem, 8vw, 5.5rem);
-      font-weight: 700;
-      letter-spacing: -0.04em;
-      margin-bottom: 12px;
-    }
-
-    .hero p {
-      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-      color: #6e6e73;
-      margin-bottom: 30px;
-    }
-
-    .hero a {
-      display: inline-block;
-      background: #0071e3;
-      color: white;
-      text-decoration: none;
-      padding: 14px 24px;
-      border-radius: 999px;
-      font-weight: 600;
-      transition: 0.2s ease;
-    }
-
-    .hero a:hover {
-      background: #005bb5;
-      transform: translateY(-1px);
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 40px 20px 80px;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      margin-bottom: 40px;
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(10px);
-      border-radius: 28px;
-      padding: 32px;
-      margin-bottom: 24px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-    }
-
-    .card h2 {
-      font-size: 2rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 18px;
-    }
-
-    .card p {
-      font-size: 1.05rem;
-      color: #424245;
-      margin-bottom: 14px;
-    }
-
-    .label {
-      color: #1d1d1f;
-      font-weight: 600;
-    }
-
-    .video-link {
-      display: inline-block;
-      margin-top: 8px;
-      color: #0071e3;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .video-link:hover {
-      text-decoration: underline;
     }
 
     .nav {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(245, 245, 247, 0.8);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    }
-
-    .nav-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 14px 20px;
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #ddd;
+      padding: 10px 30px;
       display: flex;
       justify-content: space-between;
-      align-items: center;
     }
 
-    .nav-name {
-      font-weight: 600;
-      font-size: 1rem;
-    }
-
-    .nav-links a {
-      color: #1d1d1f;
+    .nav a {
+      margin-left: 15px;
       text-decoration: none;
-      margin-left: 20px;
-      font-size: 0.95rem;
+      color: #1d1d1f;
     }
 
-    .nav-links a:hover {
-      color: #0071e3;
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
     }
 
-    @media (max-width: 700px) {
-      .nav-inner {
-        flex-direction: column;
-        gap: 10px;
-      }
+    .hero h1 {
+      font-size: 60px;
+      margin-bottom: 10px;
+    }
 
-      .nav-links a {
-        margin: 0 8px;
-      }
+    .hero p {
+      font-size: 20px;
+      color: #6e6e73;
+    }
 
-      .card {
-        padding: 24px;
-      }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
 
-      .card h2 {
-        font-size: 1.5rem;
-      }
+    .card {
+      background: white;
+      border-radius: 25px;
+      padding: 30px;
+      margin-bottom: 25px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    .project-img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+
+    .project-links a {
+      display: inline-block;
+      margin: 10px 10px 0 0;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: #0071e3;
+      color: white;
+      text-decoration: none;
+    }
+
+    .project-links a:hover {
+      background: #005bb5;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    .label {
+      font-weight: bold;
     }
   </style>
 </head>
+
 <body>
 
-  <nav class="nav">
-    <div class="nav-inner">
-      <div class="nav-name">Nydell Vera</div>
-      <div class="nav-links">
-        <a href="#code-review">Code Review</a>
-        <a href="#enhancement1">Enhancement 1</a>
-        <a href="#enhancement2">Enhancement 2</a>
-        <a href="#enhancement3">Enhancement 3</a>
+  <div class="nav">
+    <div><b>Nydell Vera</b></div>
+    <div>
+      <a href="#code">Code Review</a>
+      <a href="#e1">Enhancement 1</a>
+      <a href="#e2">Enhancement 2</a>
+      <a href="#e3">Enhancement 3</a>
+    </div>
+  </div>
+
+  <div class="hero">
+    <h1>Nydell Vera</h1>
+    <p>Computer Science ePortfolio</p>
+  </div>
+
+  <div class="container">
+
+    <!-- CODE REVIEW -->
+    <div class="card" id="code">
+      <h2>Code Review Video</h2>
+      <a href="https://youtu.be/358Elz4ZY4s" target="_blank">
+        Watch My Code Review Video
+      </a>
+    </div>
+
+    <!-- ENHANCEMENT 1 -->
+    <div class="card" id="e1">
+      <h2>Enhancement 1: Software Design and Engineering</h2>
+
+      <img src="MainScreen.png" class="project-img">
+      <img src="LoginScreen.png" class="project-img">
+
+      <p><span class="label">Overview:</span> This project is a mobile weight tracking application that allows users to create an account, log in, and manage their weight entries. Users can add, edit, and delete entries, and the application maintains a history of their data.</p>
+
+      <p><span class="label">Enhancement:</span> I improved the overall structure of the application by organizing the code into more modular components, making it easier to maintain and expand. I also added validation to prevent invalid data from being stored and improved the user interface to make interactions clearer and more user-friendly.</p>
+
+      <p><span class="label">Skills:</span> Software design, problem solving, UI/UX, code structure</p>
+
+      <div class="project-links">
+        <a href="https://github.com/YOURUSERNAME/weight-tracker-original" target="_blank">Original Project</a>
+        <a href="https://github.com/YOURUSERNAME/weight-tracker-enhanced" target="_blank">Enhanced Project</a>
       </div>
     </div>
-  </nav>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Nydell Vera</h1>
-      <p>Computer Science ePortfolio</p>
-      <a href="#code-review">View My Work</a>
-    </div>
-  </section>
-
-  <main class="container">
-    <h2 class="section-title">Portfolio Highlights</h2>
-
-    <section class="card" id="code-review">
-      <h2>Code Review Video</h2>
-      <p>This video gives an overview of my selected artifact, its original functionality, areas for improvement, and the enhancements I planned across software engineering, algorithms and data structures, and databases.</p>
-      <a class="video-link" href="https://youtu.be/358Elz4ZY4s" target="_blank">Watch My Code Review Video</a>
-    </section>
-
-    <section class="card" id="enhancement1">
-      <h2>Enhancement 1: Software Design and Engineering</h2>
-      <p><span class="label">Overview:</span> (write what the project is)</p>
-      <p><span class="label">Enhancement:</span> (what you improved)</p>
-      <p><span class="label">Skills:</span> Software design, problem solving, code structure</p>
-    </section>
-
-    <section class="card" id="enhancement2">
+    <!-- ENHANCEMENT 2 -->
+    <div class="card" id="e2">
       <h2>Enhancement 2: Algorithms and Data Structures</h2>
-      <p><span class="label">Overview:</span> (write what the project is)</p>
-      <p><span class="label">Enhancement:</span> (what you improved)</p>
-      <p><span class="label">Skills:</span> Algorithms, efficiency, data structures</p>
-    </section>
 
-    <section class="card" id="enhancement3">
+      <p><span class="label">Overview:</span> This project focuses on improving how data is stored and processed using efficient data structures and algorithms.</p>
+
+      <p><span class="label">Enhancement:</span> I improved performance by optimizing how data is accessed and stored. I replaced inefficient logic with better data structures and reduced unnecessary operations, improving execution time and scalability.</p>
+
+      <p><span class="label">Skills:</span> Algorithms, data structures, performance optimization</p>
+
+      <div class="project-links">
+        <a href="https://github.com/YOURUSERNAME/algorithms-original" target="_blank">Original Project</a>
+        <a href="https://github.com/YOURUSERNAME/algorithms-enhanced" target="_blank">Enhanced Project</a>
+      </div>
+    </div>
+
+    <!-- ENHANCEMENT 3 -->
+    <div class="card" id="e3">
       <h2>Enhancement 3: Databases</h2>
-      <p><span class="label">Overview:</span> (write what the project is)</p>
-      <p><span class="label">Enhancement:</span> (what you improved)</p>
-      <p><span class="label">Skills:</span> Databases, data validation, data management</p>
-    </section>
-  </main>
+
+      <img src="Chart1.png" class="project-img">
+      <img src="Chart2.png" class="project-img">
+      <img src="Chart3.png" class="project-img">
+      <img src="Chart4.png" class="project-img">
+
+      <p><span class="label">Overview:</span> This project is an animal outcomes dashboard that visualizes rescue data using charts and filters.</p>
+
+      <p><span class="label">Enhancement:</span> I improved how data is validated and processed by adding checks for missing or invalid data and improving how queries are handled. I also enhanced the dashboard visuals to make data easier to understand.</p>
+
+      <p><span class="label">Skills:</span> Databases, data validation, data visualization</p>
+
+      <div class="project-links">
+        <a href="https://github.com/YOURUSERNAME/dashboard-original" target="_blank">Original Project</a>
+        <a href="https://github.com/YOURUSERNAME/dashboard-enhanced" target="_blank">Enhanced Project</a>
+      </div>
+    </div>
+
+  </div>
 
 </body>
 </html>
