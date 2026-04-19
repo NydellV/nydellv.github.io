@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nydell Vera - ePortfolio</title>
+
   <style>
     * {
       box-sizing: border-box;
@@ -22,40 +23,33 @@
       line-height: 1.6;
     }
 
+    /* NAV */
     .nav {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(245, 245, 247, 0.82);
+      background: rgba(245,245,247,0.82);
       backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
     }
 
     .nav-inner {
       max-width: 1150px;
-      margin: 0 auto;
+      margin: auto;
       padding: 14px 22px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 20px;
-    }
-
-    .nav-name {
-      font-weight: 600;
-      font-size: 1rem;
-      letter-spacing: -0.01em;
     }
 
     .nav-links {
       display: flex;
-      flex-wrap: wrap;
       gap: 16px;
     }
 
     .nav-links a {
-      color: #1d1d1f;
       text-decoration: none;
+      color: #1d1d1f;
       font-size: 0.95rem;
     }
 
@@ -63,296 +57,221 @@
       color: #0071e3;
     }
 
+    /* HERO */
     .hero {
       min-height: 72vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 70px 20px 40px;
-      background: linear-gradient(to bottom, #ffffff, #f5f5f7);
-    }
-
-    .hero-content {
-      max-width: 900px;
+      background: linear-gradient(#fff,#f5f5f7);
     }
 
     .hero h1 {
-      font-size: clamp(3rem, 8vw, 5.6rem);
-      font-weight: 700;
-      letter-spacing: -0.045em;
+      font-size: 5rem;
       margin-bottom: 10px;
     }
 
     .hero p {
-      font-size: clamp(1.15rem, 2.5vw, 1.8rem);
       color: #6e6e73;
-      margin-bottom: 26px;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
     }
 
     .hero a {
-      display: inline-block;
       background: #0071e3;
-      color: #fff;
-      text-decoration: none;
+      color: white;
       padding: 14px 24px;
       border-radius: 999px;
-      font-weight: 600;
-      transition: 0.2s ease;
+      text-decoration: none;
     }
 
-    .hero a:hover {
-      background: #005bb5;
-      transform: translateY(-1px);
-    }
-
+    /* CONTAINER */
     .container {
-      max-width: 1150px;
-      margin: 0 auto;
-      padding: 0 20px 80px;
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
     }
 
     .section-title {
       text-align: center;
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      margin-bottom: 40px;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.88);
-      backdrop-filter: blur(10px);
-      border-radius: 30px;
-      padding: 34px;
-      margin-bottom: 28px;
-      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.06);
+      background: white;
+      border-radius: 25px;
+      padding: 30px;
+      margin-bottom: 25px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     }
 
     .card h2 {
-      font-size: clamp(1.8rem, 3vw, 2.4rem);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     .meta {
-      color: #6e6e73;
-      font-size: 0.98rem;
-      margin-bottom: 18px;
+      color: gray;
+      margin-bottom: 10px;
     }
 
-    .card p {
-      font-size: 1.05rem;
-      color: #424245;
-      margin-bottom: 14px;
-    }
-
-    .label {
-      color: #1d1d1f;
-      font-weight: 600;
-    }
-
-    .video-link {
-      display: inline-block;
-      margin-top: 12px;
-      color: #0071e3;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .video-link:hover {
-      text-decoration: underline;
-    }
-
+    /* PHONE IMAGES */
     .phone-container {
       display: flex;
       justify-content: center;
-      align-items: flex-start;
-      gap: 26px;
-      flex-wrap: wrap;
-      margin: 24px 0 28px;
+      gap: 20px;
+      margin: 20px 0;
     }
 
     .phone-img {
-      width: 170px;
-      max-width: 42vw;
-      height: auto;
-      border-radius: 28px;
-      background: #fff;
-      padding: 8px;
-      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.14);
+      width: 140px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     }
 
+    /* GRID IMAGES */
     .image-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      margin: 24px 0 28px;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin: 20px 0;
     }
 
     .project-img {
       width: 100%;
-      border-radius: 20px;
-      display: block;
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
-      background: #fff;
+      border-radius: 15px;
     }
 
-    .project-links {
-      margin-top: 18px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
+    /* BUTTON LINKS */
     .project-links a {
-      display: inline-block;
-      padding: 11px 18px;
-      border-radius: 999px;
       background: #0071e3;
       color: white;
+      padding: 10px 16px;
+      border-radius: 999px;
       text-decoration: none;
-      font-size: 0.94rem;
-      font-weight: 600;
-      transition: 0.2s ease;
+      margin-right: 10px;
     }
 
-    .project-links a:hover {
-      background: #005bb5;
-      transform: translateY(-1px);
-    }
-
-    @media (max-width: 760px) {
-      .nav-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .image-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .card {
-        padding: 24px;
-      }
-
-      .phone-img {
-        width: 145px;
-      }
-    }
   </style>
 </head>
+
 <body>
 
-  <nav class="nav">
-    <div class="nav-inner">
-      <div class="nav-name">Nydell Vera</div>
-      <div class="nav-links">
-        <a href="#code-review">Code Review</a>
-        <a href="#enhancement1">Enhancement 1</a>
-        <a href="#enhancement2">Enhancement 2</a>
-        <a href="#enhancement3">Enhancement 3</a>
-      </div>
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div><strong>Nydell Vera</strong></div>
+    <div class="nav-links">
+      <a href="#code">Code Review</a>
+      <a href="#e1">Enhancement 1</a>
+      <a href="#e2">Enhancement 2</a>
+      <a href="#e3">Enhancement 3</a>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Nydell Vera</h1>
-      <p>Computer Science ePortfolio</p>
-      <a href="#code-review">View My Work</a>
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>Nydell Vera</h1>
+    <p>Computer Science ePortfolio</p>
+    <a href="#code">View My Work</a>
+  </div>
+</section>
+
+<!-- SELF ASSESSMENT -->
+<div class="container">
+  <div class="card">
+    <h2>Professional Self-Assessment</h2>
+
+    <p>
+      Throughout my time in the Computer Science program, I developed strong skills in software development, problem solving, and technical communication. This portfolio represents my growth across software engineering, algorithms, databases, and security.
+    </p>
+
+    <p>
+      In CS 320, I improved a Java-based service system by enhancing structure, fixing inconsistencies, and adding new functionality. This strengthened my understanding of maintainable software design.
+    </p>
+
+    <p>
+      In CS 360, I worked on a mobile weight tracker app where I implemented password hashing, input validation, and debugging improvements. This showed my ability to improve both security and user experience.
+    </p>
+
+    <p>
+      In CS 340, I enhanced a MongoDB dashboard by securing credentials, validating data, and preventing unsafe database operations. I also rebuilt the project locally, which strengthened my problem-solving ability.
+    </p>
+
+    <p>
+      Overall, this portfolio demonstrates my ability to analyze systems, identify weaknesses, and implement meaningful improvements. I now approach development with a focus on real-world usability, security, and scalability.
+    </p>
+
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="container">
+
+  <h2 class="section-title">Portfolio Highlights</h2>
+
+  <!-- CODE REVIEW -->
+  <div class="card" id="code">
+    <h2>Code Review Video</h2>
+    <p>This video explains all three projects and enhancements.</p>
+    <a href="https://youtu.be/358Elz4ZY4s" target="_blank">Watch Video</a>
+  </div>
+
+  <!-- ENHANCEMENT 1 -->
+  <div class="card" id="e1">
+    <h2>Enhancement 1: Software Engineering (CS 320)</h2>
+
+    <p><strong>Overview:</strong> Java service system with appointments, tasks, contacts.</p>
+    <p><strong>Enhancement:</strong> Improved structure, added rescheduling, fixed code consistency.</p>
+
+    <div class="project-links">
+      <a href="https://github.com/NydellV/Original-Files-CS-320">Original</a>
+      <a href="https://github.com/NydellV/Enhancement-1">Enhanced</a>
     </div>
-  </section>
+  </div>
 
-  <main class="container">
-    <h2 class="section-title">Portfolio Highlights</h2>
+  <!-- ENHANCEMENT 2 -->
+  <div class="card" id="e2">
+    <h2>Enhancement 2: Algorithms (CS 360)</h2>
 
-    <section class="card" id="code-review">
-      <h2>Code Review Video</h2>
-      <p>
-        This code review introduces the three artifacts selected for my capstone portfolio and explains the weaknesses I identified, the enhancements I planned, and how each project connects to a different category in the program. The review covers my CS 320 Java service management system, my CS 360 Android weight tracker, and my CS 340 Python and MongoDB dashboard project.
-      </p>
-      <a class="video-link" href="https://youtu.be/358Elz4ZY4s" target="_blank">Watch My Code Review Video</a>
-    </section>
+    <div class="phone-container">
+      <img src="LoginScreen.png" class="phone-img">
+      <img src="MainScreen.png" class="phone-img">
+    </div>
 
-    <section class="card" id="enhancement1">
-      <h2>Enhancement 1: Software Design and Engineering</h2>
-      <div class="meta">Course: CS 320 – Software Testing, Automation, and Quality Assurance</div>
+    <p><strong>Overview:</strong> Android weight tracker app.</p>
+    <p><strong>Enhancement:</strong> Added password hashing, validation, debugging improvements.</p>
 
-      <p>
-        <span class="label">Overview:</span> This artifact is a Java-based service management system built around three connected components: Appointment Service, Contact Service, and Task Service. Each section of the project includes a model class, a service class, and unit tests. The project demonstrates object-oriented design, encapsulation, validation, and test-driven thinking by separating responsibilities between data models and service logic. The original artifact already showed solid fundamentals, but it also had weaknesses that made it a strong candidate for enhancement, especially in code consistency, documentation quality, and real-world usability.
-      </p>
+    <div class="project-links">
+      <a href="https://github.com/NydellV/Original-Files-CS-360">Original</a>
+      <a href="https://github.com/NydellV/Enhancement-2">Enhanced</a>
+    </div>
+  </div>
 
-      <p>
-        <span class="label">Enhancement:</span> For this enhancement, I focused on improving the project as if it were being prepared for more realistic software use instead of only meeting the original assignment requirements. First, I added clearer and more consistent comments across the files because the original comments were uneven and made some parts easier to understand than others. Next, I corrected the missing <code>final</code> keyword on the <code>taskMap</code> field in <code>TaskService.java</code>, which improved consistency with the other services and helped protect the integrity of the object reference. Finally, I added a rescheduling feature to the appointment portion of the system by creating logic that allows an appointment date to be updated while still validating the new date the same way the constructor does. This made the project stronger from a software design perspective because it extended the system beyond the original classroom requirement and made it behave more like a real scheduling application.
-      </p>
+  <!-- ENHANCEMENT 3 -->
+  <div class="card" id="e3">
+    <h2>Enhancement 3: Databases (CS 340)</h2>
 
-      <p>
-        <span class="label">Skills:</span> Object-oriented programming, software design, maintainability, validation, unit testing, code consistency
-      </p>
+    <div class="image-grid">
+      <img src="Chart1.png" class="project-img">
+      <img src="Chart2.png" class="project-img">
+      <img src="Chart3.png" class="project-img">
+      <img src="Chart4.png" class="project-img">
+    </div>
 
-      <div class="project-links">
-        <a href="https://github.com/NydellV/Original-Files-CS-320" target="_blank">Original Project</a>
-        <a href="https://github.com/NydellV/Enhancement-1" target="_blank">Enhanced Project</a>
-      </div>
-    </section>
+    <p><strong>Overview:</strong> MongoDB dashboard project.</p>
+    <p><strong>Enhancement:</strong> Added security, validation, prevented unsafe queries.</p>
 
-    <section class="card" id="enhancement2">
-      <h2>Enhancement 2: Algorithms and Data Structures</h2>
-      <div class="meta">Course: CS 360 – Mobile Architecture and Programming</div>
+    <div class="project-links">
+      <a href="https://github.com/NydellV/Original-Files-CS-340">Original</a>
+      <a href="https://github.com/NydellV/Enhancement-3">Enhanced</a>
+    </div>
+  </div>
 
-      <div class="phone-container">
-        <img src="LoginScreen.png" alt="Weight Tracker login screen" class="phone-img">
-        <img src="MainScreen.png" alt="Weight Tracker main screen" class="phone-img">
-      </div>
+</div>
 
-      <p>
-        <span class="label">Overview:</span> This artifact is an Android weight tracker application written in Java in Android Studio. The app allows a user to create an account, log in, and manage daily weight entries. Its core files include <code>MainActivity</code>, <code>WeightEntriesActivity</code>, <code>WeightAdapter</code>, <code>WeightDatabaseHelper</code>, and <code>WeightEntry</code>. Together, these files handle account creation, login validation, local database operations, display of weight records, and editing or deleting entries. I chose this project because it is a complete working application that combines user interaction, data storage, and application logic in a way that clearly shows both strengths and areas that could be improved.
-      </p>
-
-      <p>
-        <span class="label">Enhancement:</span> My enhancements focused on both security and the quality of the logic used to process data. The most important improvement was adding password hashing in <code>WeightDatabaseHelper.java</code> so passwords are no longer stored in plain text. I used SHA-256 hashing so user credentials are stored more securely. I also added weight range validation in both <code>WeightEntriesActivity.java</code> and <code>WeightAdapter.java</code> so the app rejects unrealistic values below 50 pounds or above 1000 pounds instead of accepting any numeric input. In addition, I created a <code>toString()</code> method inside <code>WeightEntry.java</code> to make the object easier to inspect and debug, since Java objects without <code>toString()</code> are harder to read during development. Lastly, I improved documentation by adding useful comments throughout the project to explain the most important sections of the code. These changes strengthened the artifact by improving data handling, input control, debugging support, and security.
-      </p>
-
-      <p>
-        <span class="label">Skills:</span> Java, Android Studio, SQLite, input validation, security, data handling, debugging, mobile UI development
-      </p>
-
-      <div class="project-links">
-        <a href="https://github.com/NydellV/Original-Files-CS-360" target="_blank">Original Project</a>
-        <a href="https://github.com/NydellV/Enhancement-2" target="_blank">Enhanced Project</a>
-      </div>
-    </section>
-
-    <section class="card" id="enhancement3">
-      <h2>Enhancement 3: Databases</h2>
-      <div class="meta">Course: CS 340 – Advanced Programming Concepts</div>
-
-      <div class="image-grid">
-        <img src="Chart1.png" alt="Animal dashboard chart 1" class="project-img">
-        <img src="Chart2.png" alt="Animal dashboard chart 2" class="project-img">
-        <img src="Chart3.png" alt="Animal dashboard chart 3" class="project-img">
-        <img src="Chart4.png" alt="Animal dashboard chart 4" class="project-img">
-      </div>
-
-      <p>
-        <span class="label">Overview:</span> This artifact is my CS 340 database project, which combines a Python CRUD layer with an interactive dashboard built on top of a MongoDB database. The backend uses an <code>AnimalShelter</code> class in <code>animal_shelter.py</code> and <code>crud.py</code> to perform create, read, update, and delete operations through PyMongo. The front end uses a dashboard to display and filter animal shelter data. This project shows my ability to work with database connections, CRUD operations, query-driven filtering, and data visualization in a more complete database application rather than just a small script.
-      </p>
-
-      <p>
-        <span class="label">Enhancement:</span> My enhancements for this project centered on security and defensive programming. In the original version, the database credentials were hardcoded directly in the source code, so I moved them to environment variables using <code>os.environ.get()</code> so the username and password no longer appear in the code itself. I also strengthened validation in the <code>create</code> method by requiring important fields such as animal type, breed, and name before allowing a record to be inserted. In the original artifact, incomplete documents could be stored as long as the input was not empty. Another major improvement was adding safety checks to the <code>update</code> and <code>delete</code> methods so empty queries are rejected. Since those methods use <code>update_many</code> and <code>delete_many</code>, an empty query could affect the full collection, so this change protects the database from accidental destructive operations. I also had to rebuild my environment locally after the original Apporto environment was no longer available, import a similar public Austin animal shelter dataset, and adapt the dashboard because the replacement data did not include rescue coordinates. That process showed problem solving beyond just code changes and helped me successfully restore the project in a local environment.
-      </p>
-
-      <p>
-        <span class="label">Skills:</span> Python, MongoDB, PyMongo, CRUD operations, data validation, security, dashboard development, problem solving
-      </p>
-
-      <div class="project-links">
-        <a href="https://github.com/NydellV/Original-Files-CS-340" target="_blank">Original Project</a>
-        <a href="https://github.com/NydellV/Enhancement-3" target="_blank">Enhanced Project</a>
-      </div>
-    </section>
-  </main>
 </body>
 </html>
